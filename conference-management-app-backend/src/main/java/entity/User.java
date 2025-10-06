@@ -6,6 +6,7 @@ import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -18,7 +19,7 @@ public class User {
 
     @Id
     @UuidGenerator
-    private Long id;
+    private String id;
 
     @Column(nullable = false, unique = true, length = 50)
     private String username;
@@ -27,7 +28,7 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-    private String passwordHash;
+    private String password;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
@@ -44,6 +45,16 @@ public class User {
         createdAt = LocalDateTime.now();
     }
 
+    @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    private List<Conference> conferences;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    private List<Ticket> tickets;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    private List<Feedback> feedbacks;
 
 }
