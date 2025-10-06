@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 spring:
   profiles: dev
   datasource:
@@ -11,5 +14,10 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true
+
+  liquibase:
+    enabled: true
+    drop-first: true
+    change-log: classpath:liquibase/changelog-master.xml
