@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Conference-Management-App.iml" filepath="$PROJECT_DIR$/.idea/Conference-Management-App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/conference-management-app-backend/Conference-Management-App.iml" filepath="$PROJECT_DIR$/conference-management-app-backend/Conference-Management-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/conference-management-app-frontend/conference-management-app-frontend.iml" filepath="$PROJECT_DIR$/conference-management-app-frontend/conference-management-app-frontend.iml" />
     </modules>
   </component>
